@@ -18,12 +18,10 @@ class MainViewController: UIViewController {
     private let feedbackGenerator = UINotificationFeedbackGenerator()
     
     private var tipPrototyps: [TipPrototyp] = []
-    private var selectedPrototyp: TipPrototyp? {
-        didSet {
-            if Injection.settingsRepository.shouldProvideHapticFeedback {
-                feedbackGenerator.notificationOccurred(.success)
-            }
-        }
+    private var selectedPrototyp: TipPrototyp?
+    private var modifier: Float = 0.0
+    private var tip: Float {
+        return (selectedPrototyp?.tip ?? 0.0) + modifier
     }
     
     // MARK: Lifecycle
@@ -68,8 +66,8 @@ class MainViewController: UIViewController {
     
     private func configureCollectionViewLayout() {
         let layout = UICollectionViewFlowLayout()
-        layout.minimumLineSpacing = UIDevice.isSmallDevice ? 10.0 : 20.0
-        layout.minimumInteritemSpacing = UIDevice.isSmallDevice ? 10.0 : 20.0
+        layout.minimumLineSpacing = UIDevice.isSmallDevice ? 10.0 : 10.0
+        layout.minimumInteritemSpacing = UIDevice.isSmallDevice ? 10.0 : 10.0
         
         let height = emojiCollectionView.bounds.height - layout.minimumLineSpacing * 1.0
         let width = emojiCollectionView.bounds.width - layout.minimumInteritemSpacing * 2.0
@@ -82,6 +80,22 @@ class MainViewController: UIViewController {
     }
     
     // MARK: User Interaction
+    @IBAction func increaseButtonPressed(_ sender: UIButton) {
+        modifier += 0.01
+        hapticFeedback()
+    }
+    
+    @IBAction func decreaseButtonPressed(_ sender: UIButton) {
+        let stepSize: Float = -0.01
+        if tip + stepSize < 0.0 {
+            modifier = -1.0 * (selectedPrototyp?.tip ?? 0.0)
+            hapticFeedback(forSuccess: false)
+        } else {
+            modifier += stepSize
+            hapticFeedback()
+        }
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         dismissKeyboard()
         super.touchesBegan(touches, with: event)
@@ -89,14 +103,25 @@ class MainViewController: UIViewController {
 
     private func didSelectTipPrototyp(_ tipPrototyp: TipPrototyp) {
         selectedPrototyp = tipPrototyp
+        resetModifier()
         dismissKeyboard()
+        hapticFeedback()
     }
     
     private func dismissKeyboard() {
         view.endEditing(true)
     }
-
-
+    
+    private func resetModifier() {
+        modifier = 0.0
+    }
+    
+    private func hapticFeedback(forSuccess: Bool = true) {
+        if Injection.settingsRepository.shouldProvideHapticFeedback {
+            let notificationType: UINotificationFeedbackType = forSuccess ? .success : .error
+            feedbackGenerator.notificationOccurred(notificationType)
+        }
+    }
 
 }
 

@@ -24,6 +24,7 @@
 		27AD06AE20CD72F80030D1C8 /* UIDevice+modelName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AD06AD20CD72F80030D1C8 /* UIDevice+modelName.swift */; };
 		27AD06B020CD78AE0030D1C8 /* SettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AD06AF20CD78AE0030D1C8 /* SettingsRepository.swift */; };
 		27AD06B220CD79110030D1C8 /* DefaultSettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AD06B120CD79110030D1C8 /* DefaultSettingsRepository.swift */; };
+		27AD06B420CD807F0030D1C8 /* ShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AD06B320CD807F0030D1C8 /* ShadowButton.swift */; };
 		4D4165EDC1414EE67A07900E /* Pods_tip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E2CCD6E88A6580E6C690B2 /* Pods_tip.framework */; };
 		DE2720C7D8CCD39F8DB7215B /* Pods_tipTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D796C1722ABCCF55279C6528 /* Pods_tipTests.framework */; };
 /* End PBXBuildFile section */
@@ -62,6 +63,7 @@
 		27AD06AD20CD72F80030D1C8 /* UIDevice+modelName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+modelName.swift"; sourceTree = "<group>"; };
 		27AD06AF20CD78AE0030D1C8 /* SettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRepository.swift; sourceTree = "<group>"; };
 		27AD06B120CD79110030D1C8 /* DefaultSettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSettingsRepository.swift; sourceTree = "<group>"; };
+		27AD06B320CD807F0030D1C8 /* ShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowButton.swift; sourceTree = "<group>"; };
 		32F90D9378BFD7A26FF687BD /* Pods-tipTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tipTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-tipTests/Pods-tipTests.release.xcconfig"; sourceTree = "<group>"; };
 		D796C1722ABCCF55279C6528 /* Pods_tipTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tipTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9E2CCD6E88A6580E6C690B2 /* Pods_tip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,6 +177,7 @@
 			children = (
 				27AD06AC20CD5E8A0030D1C8 /* EmojiCollectionViewCell */,
 				27AD06AB20CD5E810030D1C8 /* AnimatedTextField */,
+				27AD06B320CD807F0030D1C8 /* ShadowButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				2704513520CB3CD7003B2278 /* Injection.swift in Sources */,
 				27AD06A620CD3F200030D1C8 /* TipPrototypRepository.swift in Sources */,
 				27AD06B220CD79110030D1C8 /* DefaultSettingsRepository.swift in Sources */,
+				27AD06B420CD807F0030D1C8 /* ShadowButton.swift in Sources */,
 				27AD06AE20CD72F80030D1C8 /* UIDevice+modelName.swift in Sources */,
 				27AD06AA20CD5D6F0030D1C8 /* CardView.swift in Sources */,
 				2704511320CB3C90003B2278 /* MainViewController.swift in Sources */,

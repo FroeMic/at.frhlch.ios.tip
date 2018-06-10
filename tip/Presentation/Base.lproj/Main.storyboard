@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,7 +27,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="F5r-tX-c4e">
-                                <rect key="frame" x="32" y="144" width="311" height="201.5"/>
+                                <rect key="frame" x="22" y="144" width="331" height="221.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5sc-0C-VAw">
                                     <size key="itemSize" width="50" height="50"/>
@@ -36,15 +37,81 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="GNt-GL-tVH">
+                                <rect key="frame" x="22" y="397.5" width="99" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQ0-ix-w9n" customClass="ShadowButton" customModule="tip" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="17.5" width="44.5" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="hQ0-ix-w9n" secondAttribute="height" multiplier="1:1" id="9HU-T5-2kj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                        <state key="normal" title="–">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="0.0" height="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.10000000000000001"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="decreaseButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mlI-Cc-1sc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wzW-On-ttY" customClass="ShadowButton" customModule="tip" customModuleProvider="target">
+                                        <rect key="frame" x="54.5" y="17.5" width="44.5" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="wzW-On-ttY" secondAttribute="height" multiplier="1:1" id="Td5-P6-vhG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                        <state key="normal" title="+">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="0.0" height="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.10000000000000001"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="increaseButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Thy-pI-q99"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="JZ7-VK-mHK"/>
+                                    <constraint firstItem="hQ0-ix-w9n" firstAttribute="width" secondItem="wzW-On-ttY" secondAttribute="width" id="Nd4-Mk-erd"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="F5r-tX-c4e" secondAttribute="trailing" constant="32" id="63y-J4-jYk"/>
-                            <constraint firstItem="F5r-tX-c4e" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" constant="-132" id="ITH-fQ-KVs"/>
+                            <constraint firstItem="GNt-GL-tVH" firstAttribute="width" secondItem="F5r-tX-c4e" secondAttribute="width" multiplier="0.33" constant="-10" id="4vY-eh-KoL"/>
+                            <constraint firstItem="GNt-GL-tVH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="22" id="5pt-UY-lbk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="F5r-tX-c4e" secondAttribute="trailing" constant="22" id="63y-J4-jYk"/>
+                            <constraint firstItem="GNt-GL-tVH" firstAttribute="top" secondItem="F5r-tX-c4e" secondAttribute="bottom" constant="32" id="7m2-Ub-chJ"/>
+                            <constraint firstItem="F5r-tX-c4e" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" constant="-112" id="ITH-fQ-KVs"/>
                             <constraint firstItem="F5r-tX-c4e" firstAttribute="top" secondItem="fN4-IE-J0h" secondAttribute="bottom" constant="60" id="Jje-uU-CcO"/>
+                            <constraint firstItem="F5r-tX-c4e" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="22" id="NbV-79-cOo"/>
                             <constraint firstItem="fN4-IE-J0h" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="Rs0-De-iSL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fN4-IE-J0h" secondAttribute="trailing" constant="32" id="ePM-jM-VVq"/>
-                            <constraint firstItem="F5r-tX-c4e" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="hqQ-8o-JnY"/>
                             <constraint firstItem="fN4-IE-J0h" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="p7Y-Wb-o7F"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
