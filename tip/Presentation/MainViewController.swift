@@ -160,8 +160,8 @@ class MainViewController: UIViewController {
     }
         private func updateLabels() {
         relativTipLabel.text = "+ \(Int(tip * 100)) %"
-        absolutTipLabel.text = "\(currencySymbol) \(expense * tip)"
-        resultLabel.text = "\(currencySymbol) \(total)"
+        absolutTipLabel.text = String(format: "%@ %.2f", locale: Locale.current, currencySymbol, expense * tip)
+        resultLabel.text = String(format: "%@ %.2f", locale: Locale.current, currencySymbol, total)
     }
     
     private func hapticFeedback(forSuccess: Bool = true) {

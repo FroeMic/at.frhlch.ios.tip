@@ -97,6 +97,20 @@ class EmojiCollectionViewCell: UICollectionViewCell {
                 self.cardView.shadowOpacity = 0.15
                 self.cardView.shadowOffset = CGSize(width: 0, height: 5.0)
             })
+            
+            let label = UILabel(frame: self.bounds)
+            label.center = CGPoint(x: bounds.width / 2.0, y: 10.0)
+            label.textAlignment = .center
+            label.text = "\(Int(tipPrototyp.tip * 100)) %"
+            addSubview(label)
+            
+            UIView.animate(withDuration: animationDuration + 1.5, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
+                label.transform = label.transform.translatedBy(x: 0, y: -20.0)
+                label.alpha = 0.0
+            }, completion: { _ in
+                label.removeFromSuperview()
+            })
+            
         } else {
             UIView.animate(withDuration: animationDuration, animations: {
                 self.emojiLabel.transform = self.emojiLabel.transform.scaledBy(x: self.isNotSelectedLabelMultiplier, y: self.isNotSelectedLabelMultiplier)
