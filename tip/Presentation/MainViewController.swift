@@ -18,6 +18,10 @@ class MainViewController: UIViewController {
     @IBOutlet var absolutTipLabel: UILabel!
     @IBOutlet var resultLabel: ResultLabel!
     
+    @IBOutlet var expenseTopConstraint: NSLayoutConstraint!
+    @IBOutlet var expensBottomConstraint: NSLayoutConstraint!
+    @IBOutlet var heightCollectionViewConstraint: NSLayoutConstraint!
+    
     private let feedbackGenerator = UINotificationFeedbackGenerator()
     
     private var tipPrototyps: [TipPrototyp] = []
@@ -49,6 +53,12 @@ class MainViewController: UIViewController {
         configureRelativTipLabel()
         configureAbsolutTipLabel()
         configureResultLabel()
+        
+        if UIDevice.isLongScreen {
+            expenseTopConstraint.constant = 70.0
+            expensBottomConstraint.constant = 70.0
+            heightCollectionViewConstraint.constant = -152.0
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -85,4 +85,10 @@ public extension UIDevice {
         "Simulator iPhone SE"
         ].contains(where: { $0 == UIDevice.modelName})
     
+
+    static let isLongScreen =  [
+        "iPhone X",
+        "Simulator iPhone X"
+        ].contains(where: { $0 == UIDevice.modelName})
+    
 }
