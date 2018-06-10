@@ -136,6 +136,7 @@
 		2704513220CB3CA8003B2278 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				27AD06A020CD266A0030D1C8 /* Extensions */,
 				2704511020CB3C90003B2278 /* AppDelegate.swift */,
 				2704513420CB3CD7003B2278 /* Injection.swift */,
 				2704511720CB3C91003B2278 /* Assets.xcassets */,
@@ -158,6 +159,13 @@
 				2704513B20CB4E92003B2278 /* EmjoiCollectionViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		27AD06A020CD266A0030D1C8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		3F8E87596D1BE0DF967F9736 /* Pods */ = {

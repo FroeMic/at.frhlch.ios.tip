@@ -12,6 +12,8 @@ import UIKit
 class AnimatedTextField: UITextField {
     
     private var borderBottomView: DashedView!
+    private var borderBottomViewHeightConstraint: NSLayoutConstraint!
+    private var borderBottomViewBottomConstraint: NSLayoutConstraint!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -41,56 +43,50 @@ class AnimatedTextField: UITextField {
         borderBottomView.spaceLength = 10.0
         addSubview(borderBottomView)
         
+        borderBottomView.translatesAutoresizingMaskIntoConstraints = false
+        
+        borderBottomViewHeightConstraint = NSLayoutConstraint(item: borderBottomView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 2.0)
+        borderBottomViewBottomConstraint = NSLayoutConstraint(item: borderBottomView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: 0.0)
+        let leadingConstraint = NSLayoutConstraint(item: borderBottomView, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 0.0)
+        let trailingConstraint = NSLayoutConstraint(item: borderBottomView, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: 0.0)
+
+        
+        self.addConstraint(borderBottomViewHeightConstraint)
+        self.addConstraint(borderBottomViewBottomConstraint)
+        self.addConstraint(leadingConstraint)
+        self.addConstraint(trailingConstraint)
+        
     }
     
     private func styleView() {
-        super.layoutSubviews()
         borderStyle = .none
-        
-
-        
     }
 
     
     private func animateBorderBottomDashed() {
         UIView.animate(withDuration: 0.2, animations: {
-            self.borderBottomView.frame = CGRect(x: 0, y: self.bounds.height, width: self.bounds.width, height: 2.0)
+            self.borderBottomViewHeightConstraint.constant = 2.0
+            self.borderBottomViewBottomConstraint.constant = 0.0
             self.borderBottomView.spaceLength = 10.0
         })
     }
     
     private func animateBorderBottomSolid() {
-        UIView.animate(withDuration: 0.2, animations: {
-            self.borderBottomView.frame = CGRect(x: 0, y: self.bounds.height, width: self.bounds.width, height: 4.0)
+        UIView.animate(withDuration: 1.2, animations: {
+            self.borderBottomViewHeightConstraint.constant = 4.0
+            self.borderBottomViewBottomConstraint.constant = 2.0
             self.borderBottomView.spaceLength = 0.0
         })
     }
     
-    private func animateFontSize(multipier: CGFloat) {
-        // TODO
-    }
-
-    private func animateAlignment(alignment: NSTextAlignment) {
-        UIView.animate(withDuration: 0.2, animations: {
-            self.textAlignment = alignment
-        })
-    }
-    
-    private func configTextField() {
-        
-    }
     
     // MARK: User Interaction
     fileprivate func didSelectTextField() {
         animateBorderBottomSolid()
-        animateAlignment(alignment: .left)
-        animateFontSize(multipier: 1.2)
     }
     
     fileprivate func didDeselectTextField() {
         animateBorderBottomDashed()
-        animateAlignment(alignment: .right)
-         animateFontSize(multipier: 1.0)
     }
 }
 
