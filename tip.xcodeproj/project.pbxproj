@@ -17,6 +17,7 @@
 		2704513820CB3D8C003B2278 /* AnimatedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2704513720CB3D8C003B2278 /* AnimatedTextField.swift */; };
 		2704513A20CB414D003B2278 /* DashedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2704513920CB414D003B2278 /* DashedView.swift */; };
 		2704513C20CB4E92003B2278 /* EmojiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2704513B20CB4E92003B2278 /* EmojiCollectionViewCell.swift */; };
+		277AE32920CDDAD300C58943 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277AE32820CDDAD300C58943 /* LaunchViewController.swift */; };
 		27AD06A420CD3AD60030D1C8 /* TipPrototyp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AD06A320CD3AD60030D1C8 /* TipPrototyp.swift */; };
 		27AD06A620CD3F200030D1C8 /* TipPrototypRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AD06A520CD3F200030D1C8 /* TipPrototypRepository.swift */; };
 		27AD06A820CD3FA80030D1C8 /* UDTipRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AD06A720CD3FA80030D1C8 /* UDTipRepository.swift */; };
@@ -57,6 +58,7 @@
 		2704513720CB3D8C003B2278 /* AnimatedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTextField.swift; sourceTree = "<group>"; };
 		2704513920CB414D003B2278 /* DashedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashedView.swift; sourceTree = "<group>"; };
 		2704513B20CB4E92003B2278 /* EmojiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCollectionViewCell.swift; sourceTree = "<group>"; };
+		277AE32820CDDAD300C58943 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		27AD06A320CD3AD60030D1C8 /* TipPrototyp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipPrototyp.swift; sourceTree = "<group>"; };
 		27AD06A520CD3F200030D1C8 /* TipPrototypRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipPrototypRepository.swift; sourceTree = "<group>"; };
 		27AD06A720CD3FA80030D1C8 /* UDTipRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDTipRepository.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				2704511220CB3C90003B2278 /* MainViewController.swift */,
 				2704511420CB3C90003B2278 /* Main.storyboard */,
 				2704511920CB3C91003B2278 /* LaunchScreen.storyboard */,
+				277AE32820CDDAD300C58943 /* LaunchViewController.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				27AD06B620CD939A0030D1C8 /* ResultLabel.swift in Sources */,
 				2704511120CB3C90003B2278 /* AppDelegate.swift in Sources */,
 				2704513C20CB4E92003B2278 /* EmojiCollectionViewCell.swift in Sources */,
+				277AE32920CDDAD300C58943 /* LaunchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
