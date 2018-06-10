@@ -25,6 +25,7 @@
 		27AD06B020CD78AE0030D1C8 /* SettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AD06AF20CD78AE0030D1C8 /* SettingsRepository.swift */; };
 		27AD06B220CD79110030D1C8 /* DefaultSettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AD06B120CD79110030D1C8 /* DefaultSettingsRepository.swift */; };
 		27AD06B420CD807F0030D1C8 /* ShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AD06B320CD807F0030D1C8 /* ShadowButton.swift */; };
+		27AD06B620CD939A0030D1C8 /* ResultLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AD06B520CD939A0030D1C8 /* ResultLabel.swift */; };
 		4D4165EDC1414EE67A07900E /* Pods_tip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E2CCD6E88A6580E6C690B2 /* Pods_tip.framework */; };
 		DE2720C7D8CCD39F8DB7215B /* Pods_tipTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D796C1722ABCCF55279C6528 /* Pods_tipTests.framework */; };
 /* End PBXBuildFile section */
@@ -64,6 +65,7 @@
 		27AD06AF20CD78AE0030D1C8 /* SettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRepository.swift; sourceTree = "<group>"; };
 		27AD06B120CD79110030D1C8 /* DefaultSettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSettingsRepository.swift; sourceTree = "<group>"; };
 		27AD06B320CD807F0030D1C8 /* ShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowButton.swift; sourceTree = "<group>"; };
+		27AD06B520CD939A0030D1C8 /* ResultLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultLabel.swift; sourceTree = "<group>"; };
 		32F90D9378BFD7A26FF687BD /* Pods-tipTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tipTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-tipTests/Pods-tipTests.release.xcconfig"; sourceTree = "<group>"; };
 		D796C1722ABCCF55279C6528 /* Pods_tipTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tipTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9E2CCD6E88A6580E6C690B2 /* Pods_tip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,6 +180,7 @@
 				27AD06AC20CD5E8A0030D1C8 /* EmojiCollectionViewCell */,
 				27AD06AB20CD5E810030D1C8 /* AnimatedTextField */,
 				27AD06B320CD807F0030D1C8 /* ShadowButton.swift */,
+				27AD06B520CD939A0030D1C8 /* ResultLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				2704513820CB3D8C003B2278 /* AnimatedTextField.swift in Sources */,
 				27AD06B020CD78AE0030D1C8 /* SettingsRepository.swift in Sources */,
 				27AD06A420CD3AD60030D1C8 /* TipPrototyp.swift in Sources */,
+				27AD06B620CD939A0030D1C8 /* ResultLabel.swift in Sources */,
 				2704511120CB3C90003B2278 /* AppDelegate.swift in Sources */,
 				2704513C20CB4E92003B2278 /* EmojiCollectionViewCell.swift in Sources */,
 			);

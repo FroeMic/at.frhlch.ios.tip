@@ -16,6 +16,7 @@ class MainViewController: UIViewController {
     @IBOutlet var emojiCollectionView: UICollectionView!
     @IBOutlet var relativTipLabel: UILabel!
     @IBOutlet var absolutTipLabel: UILabel!
+    @IBOutlet var resultLabel: ResultLabel!
     
     private let feedbackGenerator = UINotificationFeedbackGenerator()
     
@@ -31,6 +32,9 @@ class MainViewController: UIViewController {
         }
         return expense
     }
+    private var total: Float {
+        return expense * tip + expense
+    }
     
     // MARK: Lifecycle
     override func viewDidLoad() {
@@ -41,6 +45,7 @@ class MainViewController: UIViewController {
         configureCollectionViewLayout()
         configureRelativTipLabel()
         configureAbsolutTipLabel()
+        configureResultLabel()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -100,6 +105,11 @@ class MainViewController: UIViewController {
         absolutTipLabel.textColor = UIColor.gray
     }
     
+    func configureResultLabel() {
+        resultLabel.font = UIFont.boldSystemFont(ofSize: 36.0)
+        resultLabel.textAlignment = .right
+    }
+    
     // MARK: User Interaction
     @IBAction func increaseButtonPressed(_ sender: ShadowButton) {
         modifier += 0.01
@@ -146,6 +156,7 @@ class MainViewController: UIViewController {
         private func updateLabels() {
         relativTipLabel.text = "\(Int(tip * 100)) %"
         absolutTipLabel.text = "\(expense * tip)"
+        resultLabel.text = "\(total)"
     }
     
     private func hapticFeedback(forSuccess: Bool = true) {

@@ -118,6 +118,12 @@
                                     <constraint firstItem="hQ0-ix-w9n" firstAttribute="width" secondItem="wzW-On-ttY" secondAttribute="width" id="Nd4-Mk-erd"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQ0-9f-FHC" customClass="ResultLabel" customModule="tip" customModuleProvider="target">
+                                <rect key="frame" x="311" y="590.5" width="42" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -135,8 +141,10 @@
                             <constraint firstItem="Fag-I4-TT6" firstAttribute="leading" secondItem="GNt-GL-tVH" secondAttribute="trailing" constant="20" id="cXP-Ha-lK1"/>
                             <constraint firstItem="Dwi-90-1Uk" firstAttribute="leading" secondItem="Fag-I4-TT6" secondAttribute="leading" id="crs-ol-BQa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fN4-IE-J0h" secondAttribute="trailing" constant="32" id="ePM-jM-VVq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DQ0-9f-FHC" secondAttribute="bottom" constant="56" id="lFX-dk-loR"/>
                             <constraint firstItem="fN4-IE-J0h" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="p7Y-Wb-o7F"/>
                             <constraint firstItem="Dwi-90-1Uk" firstAttribute="trailing" secondItem="Fag-I4-TT6" secondAttribute="trailing" id="rQI-XW-RCp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DQ0-9f-FHC" secondAttribute="trailing" constant="22" id="tTH-QZ-lqy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -145,6 +153,7 @@
                         <outlet property="emojiCollectionView" destination="F5r-tX-c4e" id="UTA-qG-L2R"/>
                         <outlet property="expenseTextField" destination="fN4-IE-J0h" id="3tK-qP-zGR"/>
                         <outlet property="relativTipLabel" destination="Fag-I4-TT6" id="L72-Ta-DjI"/>
+                        <outlet property="resultLabel" destination="DQ0-9f-FHC" id="mxW-Jb-U6p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
