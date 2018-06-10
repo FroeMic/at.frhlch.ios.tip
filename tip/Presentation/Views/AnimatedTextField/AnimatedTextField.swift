@@ -15,6 +15,11 @@ class AnimatedTextField: UITextField {
     private var borderBottomViewHeightConstraint: NSLayoutConstraint!
     private var borderBottomViewBottomConstraint: NSLayoutConstraint!
     
+    @IBInspectable
+    var prefix: String = ""
+    
+    private(set) var textWithoutPrefix: String?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         initialSetup()
@@ -98,6 +103,26 @@ extension AnimatedTextField: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         didDeselectTextField()
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        let oldTextWithoutPrefix = (textWithoutPrefix ?? "")
+        
+        if string == "" {
+            textWithoutPrefix = String(textWithoutPrefix?.dropLast() ?? "")
+        } else {
+            textWithoutPrefix = (textWithoutPrefix ?? "") + string
+        }
+        
+        if textWithoutPrefix == "" {
+            textField.text = ""
+            return true
+        }
+        
+        textField.text = "\(prefix) \(oldTextWithoutPrefix)"
+        
+        return true
     }
 
 }

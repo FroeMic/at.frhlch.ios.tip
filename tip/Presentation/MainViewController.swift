@@ -27,13 +27,16 @@ class MainViewController: UIViewController {
         return (selectedPrototyp?.tip ?? 0.0) + modifier
     }
     private var expense: Float {
-        guard let expenseText = expenseTextField.text, let expense = Float(expenseText) else {
+        guard let expenseText = expenseTextField.textWithoutPrefix, let expense = Float(expenseText) else {
             return 0.0
         }
         return expense
     }
     private var total: Float {
         return expense * tip + expense
+    }
+    private var currencySymbol: String {
+        return Locale.current.currencySymbol ?? "$"
     }
     
     // MARK: Lifecycle
@@ -66,6 +69,8 @@ class MainViewController: UIViewController {
     }
     
     private func configureExpenseTextField() {
+        expenseTextField.placeholder = "\(currencySymbol) \(Double(0.00))"
+        expenseTextField.prefix = currencySymbol
         expenseTextField.textAlignment = .right
         expenseTextField.font = UIFont.boldSystemFont(ofSize: 36.0)
         expenseTextField.enablesReturnKeyAutomatically = true
@@ -95,7 +100,7 @@ class MainViewController: UIViewController {
     }
     
     func configureRelativTipLabel() {
-        relativTipLabel.font = UIFont.systemFont(ofSize: 24.0)
+        relativTipLabel.font = UIFont.systemFont(ofSize: 28.0)
         relativTipLabel.textAlignment = .right
     }
     
@@ -154,9 +159,9 @@ class MainViewController: UIViewController {
         modifier = 0.0
     }
         private func updateLabels() {
-        relativTipLabel.text = "\(Int(tip * 100)) %"
-        absolutTipLabel.text = "\(expense * tip)"
-        resultLabel.text = "\(total)"
+        relativTipLabel.text = "+ \(Int(tip * 100)) %"
+        absolutTipLabel.text = "\(currencySymbol) \(expense * tip)"
+        resultLabel.text = "\(currencySymbol) \(total)"
     }
     
     private func hapticFeedback(forSuccess: Bool = true) {
