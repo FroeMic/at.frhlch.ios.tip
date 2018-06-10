@@ -102,12 +102,14 @@ class MainViewController: UIViewController {
     func configureRelativTipLabel() {
         relativTipLabel.font = UIFont.systemFont(ofSize: 28.0)
         relativTipLabel.textAlignment = .right
+        relativTipLabel.text = "0 %"
     }
     
     func configureAbsolutTipLabel() {
         absolutTipLabel.font = UIFont.systemFont(ofSize: 14.0)
         absolutTipLabel.textAlignment = .right
         absolutTipLabel.textColor = UIColor.gray
+        absolutTipLabel.text = String(format: "%@ %.2f", locale: Locale.current, currencySymbol, 0.0)
     }
     
     func configureResultLabel() {
@@ -196,8 +198,8 @@ class MainViewController: UIViewController {
         label.text = "Copied"
         resultLabel.addSubview(label)
         
-        UIView.animate(withDuration: 1.5, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
-            label.transform = label.transform.translatedBy(x: 0, y: -20.0)
+        UIView.animate(withDuration: 1.75, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
+            label.transform = label.transform.translatedBy(x: 0, y: -30.0)
             label.alpha = 0.0
         }, completion: { _ in
             label.removeFromSuperview()
