@@ -12,18 +12,23 @@ struct TipPrototyp {
     
     static let symbolKey = "symbol"
     static let tipKey = "tip"
+    static let idKey = "id"
     
     let symbol: Character
     let tip: Float
+    let id: String
     
-    init(symbol: Character, tip: Float) {
+    init(symbol: Character, tip: Float, id: String? = nil) {
         self.symbol = symbol
         self.tip = abs(tip)
+        self.id = id ?? NSUUID().uuidString.lowercased()
     }
     
     init?(dict: Dictionary<String, String>) {
 
-        guard dict.keys.contains(TipPrototyp.symbolKey) && dict.keys.contains(TipPrototyp.tipKey) else {
+        guard dict.keys.contains(TipPrototyp.symbolKey),
+            dict.keys.contains(TipPrototyp.tipKey),
+            dict.keys.contains(TipPrototyp.idKey) else {
             return nil
         }
         guard let symbol = dict[TipPrototyp.symbolKey]?[0] else {
@@ -32,14 +37,18 @@ struct TipPrototyp {
         guard let tip = Float(dict[TipPrototyp.tipKey]!) else {
             return nil
         }
+        guard let id = dict[TipPrototyp.idKey] else {
+            return nil
+        }
         
-        self.init(symbol: symbol, tip: tip)
+        self.init(symbol: symbol, tip: tip, id: id)
     }
     
-    func zip() -> Dictionary<String, String> {
+    func toDict() -> Dictionary<String, String> {
         return [
             TipPrototyp.symbolKey: String(symbol),
-            TipPrototyp.tipKey: "\(tip)"
+            TipPrototyp.tipKey: "\(tip)",
+            TipPrototyp.idKey: id
         ]
     }
     
