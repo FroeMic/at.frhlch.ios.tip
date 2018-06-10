@@ -182,10 +182,10 @@
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="31.934032983508249"/>
         </scene>
-        <!--View Controller-->
+        <!--Launch View Controller-->
         <scene sceneID="g2a-D7-Xo0">
             <objects>
-                <viewController id="SY5-ij-DUI" sceneMemberID="viewController">
+                <viewController id="SY5-ij-DUI" customClass="LaunchViewController" customModule="tip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IrM-E3-5B6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -59,6 +59,11 @@ class MainViewController: UIViewController {
             expensBottomConstraint.constant = 70.0
             heightCollectionViewConstraint.constant = -152.0
         }
+        
+        if UIDevice.isPlusModelScreen {
+            expenseTopConstraint.constant = 65.0
+            expensBottomConstraint.constant = 65.0
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
