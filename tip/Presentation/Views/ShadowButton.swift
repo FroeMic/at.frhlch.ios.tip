@@ -57,7 +57,6 @@ class ShadowButton: UIButton {
     }
     
     func animate() {
-        
         UIView.animate(withDuration: 0.2, animations: {
             self.transform = self.transform.scaledBy(x: 0.95, y: 0.95)
         })

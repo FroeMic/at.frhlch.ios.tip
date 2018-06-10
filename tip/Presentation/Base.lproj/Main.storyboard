@@ -37,6 +37,18 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fag-I4-TT6">
+                                <rect key="frame" x="141" y="415" width="212" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dwi-90-1Uk">
+                                <rect key="frame" x="141" y="435" width="212" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="GNt-GL-tVH">
                                 <rect key="frame" x="22" y="397.5" width="99" height="80"/>
                                 <subviews>
@@ -109,22 +121,30 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Dwi-90-1Uk" firstAttribute="top" secondItem="Fag-I4-TT6" secondAttribute="bottom" id="1un-aD-YMe"/>
                             <constraint firstItem="GNt-GL-tVH" firstAttribute="width" secondItem="F5r-tX-c4e" secondAttribute="width" multiplier="0.33" constant="-10" id="4vY-eh-KoL"/>
                             <constraint firstItem="GNt-GL-tVH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="22" id="5pt-UY-lbk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="F5r-tX-c4e" secondAttribute="trailing" constant="22" id="63y-J4-jYk"/>
                             <constraint firstItem="GNt-GL-tVH" firstAttribute="top" secondItem="F5r-tX-c4e" secondAttribute="bottom" constant="32" id="7m2-Ub-chJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fag-I4-TT6" secondAttribute="trailing" constant="22" id="C7P-9f-LFe"/>
                             <constraint firstItem="F5r-tX-c4e" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" constant="-112" id="ITH-fQ-KVs"/>
                             <constraint firstItem="F5r-tX-c4e" firstAttribute="top" secondItem="fN4-IE-J0h" secondAttribute="bottom" constant="60" id="Jje-uU-CcO"/>
                             <constraint firstItem="F5r-tX-c4e" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="22" id="NbV-79-cOo"/>
                             <constraint firstItem="fN4-IE-J0h" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="Rs0-De-iSL"/>
+                            <constraint firstItem="Fag-I4-TT6" firstAttribute="top" secondItem="wzW-On-ttY" secondAttribute="top" id="Tqy-9X-gnm"/>
+                            <constraint firstItem="Fag-I4-TT6" firstAttribute="leading" secondItem="GNt-GL-tVH" secondAttribute="trailing" constant="20" id="cXP-Ha-lK1"/>
+                            <constraint firstItem="Dwi-90-1Uk" firstAttribute="leading" secondItem="Fag-I4-TT6" secondAttribute="leading" id="crs-ol-BQa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fN4-IE-J0h" secondAttribute="trailing" constant="32" id="ePM-jM-VVq"/>
                             <constraint firstItem="fN4-IE-J0h" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="p7Y-Wb-o7F"/>
+                            <constraint firstItem="Dwi-90-1Uk" firstAttribute="trailing" secondItem="Fag-I4-TT6" secondAttribute="trailing" id="rQI-XW-RCp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="absolutTipLabel" destination="Dwi-90-1Uk" id="M61-f6-48e"/>
                         <outlet property="emojiCollectionView" destination="F5r-tX-c4e" id="UTA-qG-L2R"/>
                         <outlet property="expenseTextField" destination="fN4-IE-J0h" id="3tK-qP-zGR"/>
+                        <outlet property="relativTipLabel" destination="Fag-I4-TT6" id="L72-Ta-DjI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

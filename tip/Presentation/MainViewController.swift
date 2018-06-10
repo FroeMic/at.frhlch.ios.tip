@@ -14,6 +14,8 @@ class MainViewController: UIViewController {
 
     @IBOutlet var expenseTextField: AnimatedTextField!
     @IBOutlet var emojiCollectionView: UICollectionView!
+    @IBOutlet var relativTipLabel: UILabel!
+    @IBOutlet var absolutTipLabel: UILabel!
     
     private let feedbackGenerator = UINotificationFeedbackGenerator()
     
@@ -23,6 +25,12 @@ class MainViewController: UIViewController {
     private var tip: Float {
         return (selectedPrototyp?.tip ?? 0.0) + modifier
     }
+    private var expense: Float {
+        guard let expenseText = expenseTextField.text, let expense = Float(expenseText) else {
+            return 0.0
+        }
+        return expense
+    }
     
     // MARK: Lifecycle
     override func viewDidLoad() {
@@ -31,6 +39,8 @@ class MainViewController: UIViewController {
         configureExpenseTextField()
         configureEmojiCollectionView()
         configureCollectionViewLayout()
+        configureRelativTipLabel()
+        configureAbsolutTipLabel()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -79,11 +89,23 @@ class MainViewController: UIViewController {
         emojiCollectionView.setCollectionViewLayout(layout, animated: false)
     }
     
+    func configureRelativTipLabel() {
+        relativTipLabel.font = UIFont.systemFont(ofSize: 24.0)
+        relativTipLabel.textAlignment = .right
+    }
+    
+    func configureAbsolutTipLabel() {
+        absolutTipLabel.font = UIFont.systemFont(ofSize: 14.0)
+        absolutTipLabel.textAlignment = .right
+        absolutTipLabel.textColor = UIColor.gray
+    }
+    
     // MARK: User Interaction
     @IBAction func increaseButtonPressed(_ sender: ShadowButton) {
         modifier += 0.01
         hapticFeedback()
         animateButton(sender)
+        updateLabels()
     }
     
     @IBAction func decreaseButtonPressed(_ sender: ShadowButton) {
@@ -97,6 +119,7 @@ class MainViewController: UIViewController {
             hapticFeedback()
             animateButton(sender)
         }
+        updateLabels()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -109,7 +132,9 @@ class MainViewController: UIViewController {
         resetModifier()
         dismissKeyboard()
         hapticFeedback()
+        updateLabels()
     }
+    
     
     private func dismissKeyboard() {
         view.endEditing(true)
@@ -117,6 +142,10 @@ class MainViewController: UIViewController {
     
     private func resetModifier() {
         modifier = 0.0
+    }
+        private func updateLabels() {
+        relativTipLabel.text = "\(Int(tip * 100)) %"
+        absolutTipLabel.text = "\(expense * tip)"
     }
     
     private func hapticFeedback(forSuccess: Bool = true) {
@@ -128,10 +157,7 @@ class MainViewController: UIViewController {
     
     private func animateButton(_ button: ShadowButton) {
         if Injection.settingsRepository.shouldAnimate {
-            
             button.animate()
-            
-            
         }
     }
 
@@ -158,7 +184,6 @@ extension MainViewController: UICollectionViewDataSource {
         }
         return cell
     }
-    
     
 }
 
