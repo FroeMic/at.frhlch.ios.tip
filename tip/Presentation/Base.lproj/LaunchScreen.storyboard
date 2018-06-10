@@ -17,7 +17,29 @@
                     <view key="view" contentMode="scaleToFill" id="G7B-Y1-Nnw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tip" translatesAutoresizingMaskIntoConstraints="NO" id="QEZ-dn-VK6">
+                                <rect key="frame" x="67" y="163.5" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="3Zx-Hu-7gv"/>
+                                    <constraint firstAttribute="width" constant="240" id="Hfu-xt-M45"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tips" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3y-HA-rj4">
+                                <rect key="frame" x="0.0" y="443.5" width="375" height="38.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Q3y-HA-rj4" firstAttribute="top" secondItem="QEZ-dn-VK6" secondAttribute="bottom" constant="40" id="6tF-21-Xnj"/>
+                            <constraint firstItem="QEZ-dn-VK6" firstAttribute="centerY" secondItem="G7B-Y1-Nnw" secondAttribute="centerY" constant="-50" id="HjI-yI-qUr"/>
+                            <constraint firstItem="QEZ-dn-VK6" firstAttribute="centerX" secondItem="G7B-Y1-Nnw" secondAttribute="centerX" id="XLy-Jw-CdL"/>
+                            <constraint firstItem="4TR-Gk-f2x" firstAttribute="trailing" secondItem="Q3y-HA-rj4" secondAttribute="trailing" id="bmG-KW-0Fd"/>
+                            <constraint firstItem="Q3y-HA-rj4" firstAttribute="leading" secondItem="4TR-Gk-f2x" secondAttribute="leading" id="dAb-gM-Kjl"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4TR-Gk-f2x"/>
                     </view>
                 </viewController>
@@ -26,4 +48,7 @@
             <point key="canvasLocation" x="550" y="28"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tip" width="1024" height="1024"/>
+    </resources>
 </document>
