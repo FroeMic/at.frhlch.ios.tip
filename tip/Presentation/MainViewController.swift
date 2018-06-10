@@ -113,6 +113,10 @@ class MainViewController: UIViewController {
     func configureResultLabel() {
         resultLabel.font = UIFont.boldSystemFont(ofSize: 36.0)
         resultLabel.textAlignment = .right
+        resultLabel.isUserInteractionEnabled = true
+        
+        let longTapGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(MainViewController.copyExpenseToPasteboard))
+        resultLabel.addGestureRecognizer(longTapGestureRecognizer)
     }
     
     // MARK: User Interaction
@@ -139,6 +143,7 @@ class MainViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         dismissKeyboard()
+        updateLabels()
         super.touchesBegan(touches, with: event)
     }
 
@@ -175,6 +180,28 @@ class MainViewController: UIViewController {
         if Injection.settingsRepository.shouldAnimate {
             button.animate()
         }
+    }
+    
+    @objc func copyExpenseToPasteboard(_ sender: UILongPressGestureRecognizer) {
+        
+        if sender.state != .began {
+            return
+        }
+        
+        UIPasteboard.general.string = String(format: "%.2f", locale: Locale.current, currencySymbol, total)
+        
+        let label = UILabel(frame: resultLabel.bounds)
+        label.center = CGPoint(x: resultLabel.bounds.width / 2.0, y: 10.0)
+        label.textAlignment = .center
+        label.text = "Copied"
+        resultLabel.addSubview(label)
+        
+        UIView.animate(withDuration: 1.5, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
+            label.transform = label.transform.translatedBy(x: 0, y: -20.0)
+            label.alpha = 0.0
+        }, completion: { _ in
+            label.removeFromSuperview()
+        })
     }
 
 }
