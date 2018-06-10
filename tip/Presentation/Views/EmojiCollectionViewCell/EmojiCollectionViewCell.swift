@@ -113,6 +113,8 @@ class EmojiCollectionViewCell: UICollectionViewCell {
             
         } else {
             UIView.animate(withDuration: animationDuration, animations: {
+                self.emojiLabel.transform = .identity
+                self.cardView.transform = .identity
                 self.emojiLabel.transform = self.emojiLabel.transform.scaledBy(x: self.isNotSelectedLabelMultiplier, y: self.isNotSelectedLabelMultiplier)
                 self.cardView.transform = self.cardView.transform.scaledBy(x: self.isNotSelectedCardMultiplier, y: self.isNotSelectedCardMultiplier)
                 self.cardView.shadowRadius = 3.0
