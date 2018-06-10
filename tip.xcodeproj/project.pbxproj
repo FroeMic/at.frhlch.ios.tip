@@ -48,7 +48,6 @@
 		2704513720CB3D8C003B2278 /* AnimatedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTextField.swift; sourceTree = "<group>"; };
 		2704513920CB414D003B2278 /* DashedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashedView.swift; sourceTree = "<group>"; };
 		2704513B20CB4E92003B2278 /* EmjoiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmjoiCollectionViewCell.swift; sourceTree = "<group>"; };
-		273E900E20CD21C40062DBC4 /* Experiment.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Experiment.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		32F90D9378BFD7A26FF687BD /* Pods-tipTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tipTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-tipTests/Pods-tipTests.release.xcconfig"; sourceTree = "<group>"; };
 		D796C1722ABCCF55279C6528 /* Pods_tipTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tipTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9E2CCD6E88A6580E6C690B2 /* Pods_tip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,7 +77,6 @@
 		2704510420CB3C8F003B2278 = {
 			isa = PBXGroup;
 			children = (
-				273E900E20CD21C40062DBC4 /* Experiment.playground */,
 				2704510F20CB3C90003B2278 /* tip */,
 				2704512420CB3C91003B2278 /* tipTests */,
 				2704510E20CB3C90003B2278 /* Products */,
