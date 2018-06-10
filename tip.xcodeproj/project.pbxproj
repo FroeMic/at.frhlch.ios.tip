@@ -18,6 +18,8 @@
 		2704513A20CB414D003B2278 /* DashedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2704513920CB414D003B2278 /* DashedView.swift */; };
 		2704513C20CB4E92003B2278 /* EmjoiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2704513B20CB4E92003B2278 /* EmjoiCollectionViewCell.swift */; };
 		27AD06A420CD3AD60030D1C8 /* TipPrototyp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AD06A320CD3AD60030D1C8 /* TipPrototyp.swift */; };
+		27AD06A620CD3F200030D1C8 /* TipPrototypRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AD06A520CD3F200030D1C8 /* TipPrototypRepository.swift */; };
+		27AD06A820CD3FA80030D1C8 /* UDTipRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AD06A720CD3FA80030D1C8 /* UDTipRepository.swift */; };
 		4D4165EDC1414EE67A07900E /* Pods_tip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E2CCD6E88A6580E6C690B2 /* Pods_tip.framework */; };
 		DE2720C7D8CCD39F8DB7215B /* Pods_tipTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D796C1722ABCCF55279C6528 /* Pods_tipTests.framework */; };
 /* End PBXBuildFile section */
@@ -50,6 +52,8 @@
 		2704513920CB414D003B2278 /* DashedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashedView.swift; sourceTree = "<group>"; };
 		2704513B20CB4E92003B2278 /* EmjoiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmjoiCollectionViewCell.swift; sourceTree = "<group>"; };
 		27AD06A320CD3AD60030D1C8 /* TipPrototyp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipPrototyp.swift; sourceTree = "<group>"; };
+		27AD06A520CD3F200030D1C8 /* TipPrototypRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipPrototypRepository.swift; sourceTree = "<group>"; };
+		27AD06A720CD3FA80030D1C8 /* UDTipRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDTipRepository.swift; sourceTree = "<group>"; };
 		32F90D9378BFD7A26FF687BD /* Pods-tipTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tipTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-tipTests/Pods-tipTests.release.xcconfig"; sourceTree = "<group>"; };
 		D796C1722ABCCF55279C6528 /* Pods_tipTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tipTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9E2CCD6E88A6580E6C690B2 /* Pods_tip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +135,8 @@
 		2704513120CB3CA0003B2278 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				27AD06A520CD3F200030D1C8 /* TipPrototypRepository.swift */,
+				27AD06A720CD3FA80030D1C8 /* UDTipRepository.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -333,8 +339,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27AD06A820CD3FA80030D1C8 /* UDTipRepository.swift in Sources */,
 				2704513A20CB414D003B2278 /* DashedView.swift in Sources */,
 				2704513520CB3CD7003B2278 /* Injection.swift in Sources */,
+				27AD06A620CD3F200030D1C8 /* TipPrototypRepository.swift in Sources */,
 				2704511320CB3C90003B2278 /* MainViewController.swift in Sources */,
 				2704513820CB3D8C003B2278 /* AnimatedTextField.swift in Sources */,
 				27AD06A420CD3AD60030D1C8 /* TipPrototyp.swift in Sources */,
