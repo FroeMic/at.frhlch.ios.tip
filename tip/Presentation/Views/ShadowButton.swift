@@ -9,6 +9,7 @@
 import UIKit
 
 class ShadowButton: UIButton {
+
     
     @IBInspectable
     var shadowRadius: CGFloat = 3.0 {
@@ -32,7 +33,7 @@ class ShadowButton: UIButton {
     }
     
     @IBInspectable
-    var cornerRadius: CGFloat = 10.0 {
+    var relativCornerRadius: CGFloat = 0.1 {
         didSet {
             updateView()
         }
@@ -47,11 +48,24 @@ class ShadowButton: UIButton {
         backgroundColor = .white
         clipsToBounds = false
         
-        layer.cornerRadius = cornerRadius
+        layer.cornerRadius = layer.bounds.width * relativCornerRadius
         
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = shadowOpacity
         layer.shadowRadius = shadowRadius
         layer.shadowOffset = shadowOffset
     }
+    
+    func animate() {
+        
+        UIView.animate(withDuration: 0.2, animations: {
+            self.transform = self.transform.scaledBy(x: 0.95, y: 0.95)
+        })
+        
+        UIView.animate(withDuration: 0.1, delay: 0.2, animations: {
+            self.transform = .identity
+        })
+    }
+
+
 }

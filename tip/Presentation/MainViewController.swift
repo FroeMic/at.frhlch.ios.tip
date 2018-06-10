@@ -80,19 +80,22 @@ class MainViewController: UIViewController {
     }
     
     // MARK: User Interaction
-    @IBAction func increaseButtonPressed(_ sender: UIButton) {
+    @IBAction func increaseButtonPressed(_ sender: ShadowButton) {
         modifier += 0.01
         hapticFeedback()
+        animateButton(sender)
     }
     
-    @IBAction func decreaseButtonPressed(_ sender: UIButton) {
+    @IBAction func decreaseButtonPressed(_ sender: ShadowButton) {
         let stepSize: Float = -0.01
         if tip + stepSize < 0.0 {
             modifier = -1.0 * (selectedPrototyp?.tip ?? 0.0)
             hapticFeedback(forSuccess: false)
+            animateButton(sender)
         } else {
             modifier += stepSize
             hapticFeedback()
+            animateButton(sender)
         }
     }
     
@@ -120,6 +123,15 @@ class MainViewController: UIViewController {
         if Injection.settingsRepository.shouldProvideHapticFeedback {
             let notificationType: UINotificationFeedbackType = forSuccess ? .success : .error
             feedbackGenerator.notificationOccurred(notificationType)
+        }
+    }
+    
+    private func animateButton(_ button: ShadowButton) {
+        if Injection.settingsRepository.shouldAnimate {
+            
+            button.animate()
+            
+            
         }
     }
 

@@ -40,7 +40,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="GNt-GL-tVH">
                                 <rect key="frame" x="22" y="397.5" width="99" height="80"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQ0-ix-w9n" customClass="ShadowButton" customModule="tip" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQ0-ix-w9n" customClass="ShadowButton" customModule="tip" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="17.5" width="44.5" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="hQ0-ix-w9n" secondAttribute="height" multiplier="1:1" id="9HU-T5-2kj"/>
@@ -51,7 +51,7 @@
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="10"/>
+                                                <real key="value" value="0.40000000000000002"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
                                                 <size key="value" width="0.0" height="3"/>
@@ -62,12 +62,15 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
                                                 <real key="value" value="0.10000000000000001"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="relativCornerRadius">
+                                                <real key="value" value="0.17000000000000001"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="decreaseButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mlI-Cc-1sc"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wzW-On-ttY" customClass="ShadowButton" customModule="tip" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wzW-On-ttY" customClass="ShadowButton" customModule="tip" customModuleProvider="target">
                                         <rect key="frame" x="54.5" y="17.5" width="44.5" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="wzW-On-ttY" secondAttribute="height" multiplier="1:1" id="Td5-P6-vhG"/>
@@ -78,7 +81,7 @@
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="10"/>
+                                                <real key="value" value="0.40000000000000002"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
                                                 <size key="value" width="0.0" height="3"/>
@@ -88,6 +91,9 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
                                                 <real key="value" value="0.10000000000000001"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="relativCornerRadius">
+                                                <real key="value" value="0.17000000000000001"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
