@@ -15,8 +15,18 @@ class MainViewController: UIViewController {
     @IBOutlet var expenseTextField: AnimatedTextField!
     @IBOutlet var emojiCollectionView: UICollectionView!
     
-    private var tipPrototyps: [TipPrototyp] = []
+    private let feedbackGenerator = UINotificationFeedbackGenerator()
     
+    private var tipPrototyps: [TipPrototyp] = []
+    private var selectedPrototyp: TipPrototyp? {
+        didSet {
+            if Injection.settingsRepository.shouldProvideHapticFeedback {
+                feedbackGenerator.notificationOccurred(.success)
+            }
+        }
+    }
+    
+    // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,7 +37,7 @@ class MainViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
-        emojiCollectionView.register(EmjoiCollectionViewCell.self, forCellWithReuseIdentifier: MainViewController.collectionViewReuseIdentifier)
+        emojiCollectionView.register(EmojiCollectionViewCell.self, forCellWithReuseIdentifier: MainViewController.collectionViewReuseIdentifier)
         emojiCollectionView.delegate = self
         emojiCollectionView.dataSource = self
         
@@ -42,11 +52,6 @@ class MainViewController: UIViewController {
         configureCollectionViewLayout()
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        view.endEditing(true)
-        super.touchesBegan(touches, with: event)
-    }
-
     private func configureExpenseTextField() {
         expenseTextField.textAlignment = .right
         expenseTextField.font = UIFont.boldSystemFont(ofSize: 36.0)
@@ -60,7 +65,7 @@ class MainViewController: UIViewController {
         emojiCollectionView.showsVerticalScrollIndicator = false
         emojiCollectionView.showsHorizontalScrollIndicator = false
     }
-
+    
     private func configureCollectionViewLayout() {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = UIDevice.isSmallDevice ? 10.0 : 20.0
@@ -72,14 +77,34 @@ class MainViewController: UIViewController {
         let cellWidth = (height / 2.0 < width / 3.0) ? height / 2.0 : width / 3.0
         
         layout.itemSize = CGSize(width: cellWidth, height: cellWidth)
-
+        
         emojiCollectionView.setCollectionViewLayout(layout, animated: false)
     }
+    
+    // MARK: User Interaction
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        dismissKeyboard()
+        super.touchesBegan(touches, with: event)
+    }
+
+    private func didSelectTipPrototyp(_ tipPrototyp: TipPrototyp) {
+        selectedPrototyp = tipPrototyp
+        dismissKeyboard()
+    }
+    
+    private func dismissKeyboard() {
+        view.endEditing(true)
+    }
+
+
+
 }
 
 extension MainViewController: UICollectionViewDelegate {
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        didSelectTipPrototyp(tipPrototyps[indexPath.row])
+    }
     
 }
 
@@ -90,8 +115,9 @@ extension MainViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainViewController.collectionViewReuseIdentifier, for: indexPath)
-        if let emojiCell = cell as? EmjoiCollectionViewCell {
+        if let emojiCell = cell as? EmojiCollectionViewCell {
             emojiCell.tipPrototyp = tipPrototyps[indexPath.row]
+            emojiCell.shouldAnimateOnSelection = Injection.settingsRepository.shouldAnimate
         }
         return cell
     }

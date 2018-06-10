@@ -11,4 +11,5 @@ import Foundation
 class Injection {
 
     static let tipRepository: TipPrototypRepository = UDTipRepository()
+    static let settingsRepository: SettingsRepository = DefaultSettingsRepository()
 }

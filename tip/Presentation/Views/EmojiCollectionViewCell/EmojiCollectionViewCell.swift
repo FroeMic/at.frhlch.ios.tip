@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EmjoiCollectionViewCell: UICollectionViewCell {
+class EmojiCollectionViewCell: UICollectionViewCell {
     
     // UI
     private let emojiLabel: UILabel = UILabel()
