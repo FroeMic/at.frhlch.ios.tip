@@ -183,8 +183,8 @@ class MainViewController: UIViewController {
     private func resetModifier() {
         modifier = 0.0
     }
-        private func updateLabels() {
-        relativTipLabel.text = "+ \(Int(tip * 100)) %"
+    private func updateLabels() {
+        relativTipLabel.text = String(format: "%d %%", Int((tip * 100).rounded()))
         absolutTipLabel.text = String(format: "%@ %.2f", locale: Locale.current, currencySymbol, expense * tip)
         resultLabel.text = String(format: "%@ %.2f", locale: Locale.current, currencySymbol, total)
     }
