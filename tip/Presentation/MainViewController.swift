@@ -31,10 +31,13 @@ class MainViewController: UIViewController {
         return (selectedPrototyp?.tip ?? 0.0) + modifier
     }
     private var expense: Float {
-        guard let expenseText = expenseTextField.textWithoutPrefix, let expense = Float(expenseText) else {
+        let nf = NumberFormatter()
+        nf.locale = Locale.current
+        guard let expenseText = expenseTextField.textWithoutPrefix,
+            let expense = nf.number(from: expenseText) else {
             return 0.0
         }
-        return expense
+        return Float(truncating: expense)
     }
     private var total: Float {
         return expense * tip + expense
