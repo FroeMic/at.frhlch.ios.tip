@@ -78,6 +78,8 @@ class MainViewController: UIViewController {
         expenseTextField.becomeFirstResponder()
         tipPrototyps = Injection.tipRepository.get()
         
+        updateLabels()
+        
         super.viewWillAppear(animated)
     }
     
