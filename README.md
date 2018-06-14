@@ -23,6 +23,6 @@ Anyways, here are a few things that make Tip easy to use:
 
 #### Get Tip on the App Store
 
-![Get Ping on the appstore](download_appstore.png)
+![Get Tip on the appstore](download_appstore.png)
 
 **-->** [Click Here to Download](https://frhlch.at/f/tip?app=1)
