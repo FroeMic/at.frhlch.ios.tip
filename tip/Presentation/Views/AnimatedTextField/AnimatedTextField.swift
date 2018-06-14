@@ -107,22 +107,30 @@ extension AnimatedTextField: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        let oldTextWithoutPrefix = (textWithoutPrefix ?? "")
+        let beginning: UITextPosition = textField.beginningOfDocument
+        let cursorLocation: UITextPosition? = textField.position(from: beginning, offset: range.location + string.count)
         
-        if string == "" {
-            textWithoutPrefix = String(textWithoutPrefix?.dropLast() ?? "")
-        } else {
-            textWithoutPrefix = (textWithoutPrefix ?? "") + string
-        }
+        let typeCasteToStringFirst = (textWithoutPrefix ?? "") as NSString
+        var updatedLocation = range.location - prefix.count - 1
+        updatedLocation = updatedLocation < 0 ? 0 : updatedLocation
+        let updatedLength = (updatedLocation + range.length) > typeCasteToStringFirst.length ? typeCasteToStringFirst.length : range.length
+        let updatedRange = NSRange(location: updatedLocation, length: updatedLength)
+        textWithoutPrefix = typeCasteToStringFirst.replacingCharacters(in: updatedRange, with: string)
         
-        if textWithoutPrefix == "" {
+        let replacementText = textWithoutPrefix ?? ""
+        if replacementText == "" {
             textField.text = ""
-            return true
+        } else if prefix == "" {
+            textField.text = replacementText
+        } else {
+            textField.text = "\(prefix) \(replacementText)"
         }
         
-        textField.text = "\(prefix) \(oldTextWithoutPrefix)"
+        if let cursorLocation = cursorLocation {
+            textField.selectedTextRange = textField.textRange(from: cursorLocation, to: cursorLocation)
+        }
         
-        return true
+        return false
     }
 
 }
