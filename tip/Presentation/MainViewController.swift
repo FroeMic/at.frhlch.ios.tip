@@ -126,7 +126,7 @@ class MainViewController: UIViewController {
     }
     
     func configureAbsolutTipLabel() {
-        absolutTipLabel.font = UIFont.systemFont(ofSize: 14.0)
+        absolutTipLabel.font = UIFont.systemFont(ofSize: 20.0)
         absolutTipLabel.textAlignment = .right
         absolutTipLabel.textColor = UIColor.gray
         absolutTipLabel.text = String(format: "%@ %.2f", locale: Locale.current, currencySymbol, 0.0)
