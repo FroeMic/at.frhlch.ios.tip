@@ -1,8 +1,8 @@
-### Tip.
+### Tip
 
 ![Tip App Banner](tip_wallpaper.png)
 
-### Tip. is small but efficient tip calculator for iOS.
+### Tip is small but efficient tip calculator for iOS.
 
 Math can be hard and especially on the dinner table I want to spend my time differently. 
 Since you made it all the way here, you probably think the same way — I give you a free and playful app to calculate your tips. 
@@ -21,5 +21,8 @@ Anyways, here are a few things that make Tip. easy to use:
 - Longpress to copy the result to the clipboard
 - ... and did I mention all those emojis?
 
+#### Get Tip on the App Store
 
+![Get Ping on the appstore](download_appstore.png)
 
+**-->** [Click Here to Download](https://frhlch.at/f/ping?app=1)
