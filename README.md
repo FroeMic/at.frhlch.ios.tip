@@ -13,16 +13,16 @@ So I tried doing something different here.
 Just click the emoji that best describes your experience and get a quick suggestion for a tip.
 Have fun! 😃
 
-Anyways, here are a few things that make Tip. easy to use:
+Anyways, here are a few things that make Tip easy to use:
 
 - Automatically opened keyboard for quick entry
 - Preconfigured shortcuts to easy the tipping proccess
-- Granular adjustment of the suggested tipping percentage
-- Longpress to copy the result to the clipboard
+- Fine-grained adjustment of the suggested tipping percentage
+- Copy the final cost to the clipboard by long-pressing on it
 - ... and did I mention all those emojis?
 
 #### Get Tip on the App Store
 
 ![Get Ping on the appstore](download_appstore.png)
 
-**-->** [Click Here to Download](https://frhlch.at/f/ping?app=1)
+**-->** [Click Here to Download](https://frhlch.at/f/tip?app=1)
