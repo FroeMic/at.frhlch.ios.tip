@@ -2,7 +2,7 @@
 
 ![Tip App Banner](tip_wallpaper.png)
 
-### Tip is small but efficient tip calculator for iOS.
+### Tip is a small but efficient tip calculator for iOS.
 
 Math can be hard and especially on the dinner table I want to spend my time differently. 
 Since you made it all the way here, you probably think the same way — I give you a free and playful app to calculate your tips. 
